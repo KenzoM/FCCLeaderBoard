@@ -11,14 +11,13 @@ export default class TableBoard extends Component {
   componentDidMount() {
     this.props.recentData() //fetch data most recent top
   }
-  renderData(userData){
+  renderData(userData,index){
     const name = userData.username;
     const recent = userData.recent;
     const allTime = userData.alltime;
-    let rank = 1;
     return(
       <tr key={name}>
-        <td>{rank}</td>
+        <td>{index + 1}</td>
         <td>{name}</td>
         <td>{recent}</td>
         <td>{allTime}</td>
