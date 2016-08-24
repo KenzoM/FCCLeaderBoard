@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import LeaderBoard from '../containers/table_board'
+import TableBoard from '../containers/table_board'
+import Header from './header'
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <LeaderBoard />
+        <Header />
+        <TableBoard />
       </div>
     );
   }
