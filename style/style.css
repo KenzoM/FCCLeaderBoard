@@ -1,3 +1,21 @@
+body{
+  background: #e2e2e2 !important
+}
+
 .container {
   margin-top: 25px;
+  background: #e2e2e2;
+}
+
+img{
+  height: 85px;
+  width: 85px;
+}
+
+td, th {
+  vertical-align: middle !important;
+}
+
+.rank, .recent, .all-time{
+  text-align: center;
 }

@@ -12,15 +12,22 @@ export default class TableBoard extends Component {
     this.props.recentData() //fetch data most recent top
   }
   renderData(userData,index){
+    const FCC_URL = 'https://www.freecodecamp.com/'
+    const img = userData.img
     const name = userData.username;
     const recent = userData.recent;
     const allTime = userData.alltime;
     return(
       <tr key={name}>
-        <td>{index + 1}</td>
-        <td>{name}</td>
-        <td>{recent}</td>
-        <td>{allTime}</td>
+        <td className="rank">{index + 1}</td>
+        <td>
+          <img className="img-responsive"
+          src={img}
+          alt='FCC profile'
+          /> <a href={FCC_URL + name}>{name}</a>
+        </td>
+        <td className="recent">{recent}</td>
+        <td className="all-time">{allTime}</td>
       </tr>
     )
   }
@@ -34,16 +41,16 @@ export default class TableBoard extends Component {
   }
   render(){
     return(
-      <table className="table table-hover">
+      <table className="table table-hover table-striped table-bordered">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Camper Name</th>
-            <th
+            <th className="rank">#</th>
+            <th className="username">Camper Name</th>
+            <th className="recent"
               onClick={this.getRecentData.bind(this)}
               >Points in 30 days
             </th>
-            <th
+            <th className="all-time"
               onClick={this.getAllTimeData.bind(this)}
               >All-time Posts
             </th>
