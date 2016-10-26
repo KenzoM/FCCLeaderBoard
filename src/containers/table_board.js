@@ -7,6 +7,7 @@ import { allTimeData } from '../actions/index'
 export default class TableBoard extends Component {
   constructor(props){
     super(props);
+    this.state= { bgColorRecent: 'lightblue' };
   }
   componentDidMount() {
     this.props.recentData() //fetch data most recent top
@@ -32,25 +33,26 @@ export default class TableBoard extends Component {
     )
   }
   getRecentData(){
-    console.log('recent data')
     this.props.recentData()
   }
   getAllTimeData(){
-    console.log('all-time data')
     this.props.allTimeData();
   }
   render(){
+    const recentStyles = {
+      backgroundColor: this.state.bgColorRecent || ''
+    };
     return(
       <table className="table table-hover table-striped table-bordered">
         <thead>
           <tr>
             <th className="rank">#</th>
             <th className="username">Camper Name</th>
-            <th className="recent"
+            <th style={recentStyles} id='col-recent'className="recent clickable"
               onClick={this.getRecentData.bind(this)}
               >Points in 30 days
             </th>
-            <th className="all-time"
+            <th style={recentStyles} id='col-alltime' className="all-time clickable"
               onClick={this.getAllTimeData.bind(this)}
               >All-time Posts
             </th>

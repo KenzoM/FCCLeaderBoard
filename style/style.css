@@ -1,5 +1,6 @@
 body{
-  background: #e2e2e2 !important
+  background: #e2e2e2 !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .container {
@@ -8,8 +9,8 @@ body{
 }
 
 img{
-  height: 85px;
-  width: 85px;
+  height: 60px;
+  width: 60px;
 }
 
 td, th {
@@ -18,4 +19,9 @@ td, th {
 
 .rank, .recent, .all-time{
   text-align: center;
+}
+
+.clickable{
+  cursor: pointer;
+  color:rgb(33, 31, 175) ;
 }
