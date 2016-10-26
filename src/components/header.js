@@ -4,9 +4,11 @@ import { Component } from 'react';
 export default class Header extends Component{
   render(){
     return (
-      <div className="page-header">
-        <h1>FCC LeaderBoard</h1>
-      </div>
+      <nav className="navbar navbar-light fcccolor">
+        <a href="https://www.freecodecamp.com"><img className="fcclogo"
+          src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg"
+          alt="fcc-logo" /> </a>
+      </nav>
     )
   }
 }

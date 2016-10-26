@@ -13,6 +13,18 @@ img{
   width: 60px;
 }
 
+.fcccolor{
+  background: #006400;
+}
+
+.fcclogo{
+  width: 260px;
+}
+
+.navbar-brand{
+  color: white !important;
+}
+
 td, th {
   vertical-align: middle !important;
 }
