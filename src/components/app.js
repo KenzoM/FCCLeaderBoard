@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import TableBoard from '../containers/table_board'
-import Header from './header'
+import TableBoard from '../containers/table_board';
+import Header from './header';
+
+import style from '../stylesheets/style.css';
 
 export default class App extends Component {
   render() {
