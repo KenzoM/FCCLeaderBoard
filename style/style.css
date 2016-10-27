@@ -21,6 +21,10 @@ img{
   width: 200px;
 }
 
+.high-light{
+  background: skyblue;
+}
+
 .navbar-brand{
   color: white !important;
 }
