@@ -41,27 +41,30 @@ export default class TableBoard extends Component {
     let recentTimeStyle = this.props.FCCData.dataType === "Recent" ? "all-time clickable high-light" : "all-time clickable";
     let allTimeStyle = this.props.FCCData.dataType === "Alltime" ? "all-time clickable high-light" : "all-time clickable";
     return(
-      <div className="table-responsive">
-        <table className="table table-hover table-striped table-bordered">
-          <thead>
-            <tr>
-              <th className="rank">#</th>
-              <th className="username">Camper Name</th>
-              <th id='col-recent'className={recentTimeStyle}
-                onClick={this.getRecentData.bind(this)}>
-                Points in 30 days
-              </th>
-              <th id='col-alltime' className={allTimeStyle}
-                onClick={this.getAllTimeData.bind(this)}
-                >All-time Posts
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.FCCData.data.map(this.renderData)}
-          </tbody>
-        </table>
+      <div className="container">
+        <div className="table-responsive">
+          <table className="table table-hover table-striped table-bordered">
+            <thead>
+              <tr>
+                <th className="rank">#</th>
+                <th className="username">Camper Name</th>
+                <th id='col-recent'className={recentTimeStyle}
+                  onClick={this.getRecentData.bind(this)}>
+                  Points in 30 days
+                </th>
+                <th id='col-alltime' className={allTimeStyle}
+                  onClick={this.getAllTimeData.bind(this)}
+                  >All-time Posts
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.FCCData.data.map(this.renderData)}
+            </tbody>
+          </table>
+        </div>        
       </div>
+
     )
   }
 }
