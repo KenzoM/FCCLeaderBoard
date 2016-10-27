@@ -1,11 +1,17 @@
+var path = require('path');
+var webpack = require('webpack');
+var ghpages = require('gh-pages');
+var WriteFilePlugin = require('write-file-webpack-plugin');
 module.exports = {
+  devtool: 'source-map',
   entry: [
     './src/index.js'
   ],
   output: {
-    path: __dirname,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    sourceMapFilename: "./bundle.js.map",
+    path: path.join(__dirname, './static')
   },
   module: {
     loaders: [{
@@ -14,13 +20,30 @@ module.exports = {
       query: {
         presets: ['react', 'es2015', 'stage-1']
       }
+    },{
+      test: /\.s?css$/,
+      loaders: ['style','css','sass'],
+      include: path.join(__dirname, 'src')
     }]
   },
+  plugins: [
+  new webpack.optimize.UglifyJsPlugin({minimize: true}),
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify("production")
+    }
+  }),
+  new WriteFilePlugin()
+  ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+    'jquery': path.join(__dirname, 'node_modules/jquery/dist/jquery'),
+    }
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    outputPath: path.join(__dirname, './dist')
   }
 };
