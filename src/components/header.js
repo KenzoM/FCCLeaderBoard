@@ -5,9 +5,10 @@ export default class Header extends Component{
   render(){
     return (
       <nav className="navbar navbar-light fcccolor">
-        <a href="https://www.freecodecamp.com"><img className="fcclogo"
+        <a href="https://www.freecodecamp.com"><img className="fcclogo navbar-brand"
           src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg"
-          alt="fcc-logo" /> </a>
+          alt="fcc-logo"/>
+        </a>
       </nav>
     )
   }

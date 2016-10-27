@@ -51,7 +51,7 @@ export default class TableBoard extends Component {
               <th className="username">Camper Name</th>
               <th style={recentStyles} id='col-recent'className="recent clickable"
                 onClick={this.getRecentData.bind(this)}
-                >Points in 30 days
+                >Points in 30 days <i className="fa fa-arrow-down" aria-hidden="true"></i>
               </th>
               <th style={recentStyles} id='col-alltime' className="all-time clickable"
                 onClick={this.getAllTimeData.bind(this)}
